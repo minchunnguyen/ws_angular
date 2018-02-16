@@ -18,3 +18,18 @@
   </li>
 </ul>
 
+<!-- app.component.html -->
+<h1>
+  Angular 2 WebSockets Tutorial
+</h1>
+<div>
+  <span>Nom de l'auteur:</span>
+  <span><input type="text" name="author" id="author" [(ngModel)]="message.author"></span>
+</div>
+
+<div>
+  <span>Contenu du message:</span>
+  <span><input type="text" name="message" id="message" [(ngModel)]="message.message"></span>
+</div>
+
+<button (click)="sendMsg()">Send Message</button>

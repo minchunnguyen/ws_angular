@@ -28,10 +28,14 @@ export class WebsocketService {
       )
 
       let observer = {
-        next: (data: Object)
+        next: (data: Object) => {
+          if(ws.readyState === WebSocket.OPEN)
+          ws.send(JSON.stringify(data));
+          console.log("send data !");
+        }
       }
 
-      return this.subject;
+      return Rx.Subject.create(observer,observable);
     }
 
 }
